@@ -57,15 +57,13 @@
         <a class="nav-btn" data-page="topic">📡 Proje Konusu</a>
         <a class="nav-btn" data-page="project">🚀 Projemiz</a>
         <a class="nav-btn" data-page="about">👥 Hakkımızda</a>
-        <a class="nav-btn" data-page="code">💻 BALBAY-M3090 Kodu</a>
+        <a class="nav-btn" data-page="simulasyon">🛸 BALBAY-M3090 Simülasyonu</a>
     </div>
     <div id="contentArea"></div>
     <div class="footer-note">TUA AstroHackathon 2026 | Uzay Çöpleriyle Mücadele | 9. Sınıf Ekibi - Bursa Anadolu Lisesi</div>
 </div>
 
 <script>
-    // BALBAY-M3090 Kodu Linki
-    const CODE_LINK = "https://studio.code.org/projects/pythonlab/188be026-d93a-4576-8f3c-2f5f7c91be41/edit";
     // PDF RAPOR LİNKİ
     const REPORT_LINK = "RAPOR.pdf";
 
@@ -238,10 +236,12 @@
 
     function renderPage(pageName) {
         const contentArea = document.getElementById("contentArea");
-        if (pageName === "code") {
-            window.open(CODE_LINK, '_blank', 'noopener,noreferrer');
+        
+        if (pageName === "simulasyon") {
+            window.open('simulasyon.html', '_blank', 'noopener,noreferrer');
             return;
         }
+        
         if (pages[pageName]) {
             contentArea.innerHTML = pages[pageName];
             currentPage = pageName;
@@ -282,11 +282,3 @@
             starsContainer.appendChild(star);
         }
     }
-
-    window.addEventListener('load', () => {
-        renderPage("home");
-        rastgeleYildizOlustur();
-    });
-</script>
-</body>
-</html>
